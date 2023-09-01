@@ -1,16 +1,31 @@
 import React from 'react';
+import CryptoCard from '../../components/cryptoCard/CryptoCard';
+import { useCryptoData } from '../../customHooks/useCryptoData';
 import { CryptoContainerStyles } from './CryptoContainer.Styles';
-import Filter from '../../components/filter/Filter';
 
-export default function CryptoContainer() {
+const CryptoContainer = () => {
+  const { cryptoData, loading, error } = useCryptoData();
+
   return (
     <CryptoContainerStyles>
-      <div className='filterContainer'>
-        <Filter filterName={'Filter'} />
-        <Filter filterName={'Data range'} />
-      </div>
-
-      <div></div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error.message}</p>
+      ) : (
+        <div className='cryptoCardContainer'>
+          {cryptoData.map((crypto) => (
+            <CryptoCard
+              key={crypto.symbol}
+              symbol={crypto.symbol}
+              price={crypto.price}
+              image={crypto.image}
+            />
+          ))}
+        </div>
+      )}
     </CryptoContainerStyles>
   );
-}
+};
+
+export default CryptoContainer;
