@@ -34,10 +34,6 @@ export function useCryptoData() {
       }
     };
     fetchCryptoData();
-
-    const intervalId = setInterval(fetchCryptoData, 5000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   return { cryptoData, loading, error };
