@@ -6,7 +6,7 @@ export const CryptoContainerStyles = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 128px;
+  margin-top: 64px;
   margin-bottom: 0px;
   gap: 32px;
   .select {
@@ -17,5 +17,11 @@ export const CryptoContainerStyles = styled.section`
     display: flex;
     flex-direction: column;
     gap: 32px;
+  }
+  .loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
   }
 `;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CryptoCard from '../../components/cryptoCard/CryptoCard';
 import { useCryptoData } from '../../customHooks/useCryptoData';
 import { CryptoContainerStyles } from './CryptoContainer.Styles';
+import loadingSvg from '../../../assets/svg/loading.svg';
 import Select from 'react-select';
 
 const CryptoContainer = () => {
@@ -23,7 +24,9 @@ const CryptoContainer = () => {
   return (
     <CryptoContainerStyles>
       {loading ? (
-        <p>Loading...</p>
+        <span className='loadingContainer'>
+          <img src={loadingSvg} alt='Loading...' />
+        </span>
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
