@@ -7,6 +7,7 @@ export const HeaderStyles = styled.header`
   justify-content: center;
   align-items: center;
   gap: 32px;
+  padding-top: 64px;
   h1 {
     font-size: 64px;
   }
