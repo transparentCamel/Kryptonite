@@ -24,7 +24,6 @@ export const CryptoCardStyles = styled.div`
       user-select: none;
     }
     :last-child {
-      margin: 0px;
       margin-left: auto;
     }
   }
@@ -51,6 +50,7 @@ export const CryptoCardStyles = styled.div`
     padding-top: 32px;
     align-items: center;
     justify-content: center;
+    margin-top: 32px;
     div {
       display: flex;
       justify-content: center;
@@ -60,6 +60,17 @@ export const CryptoCardStyles = styled.div`
       }
       :nth-child(2) {
         margin-right: 256px;
+      }
+    }
+    .buttonContainer {
+      display: flex;
+      justify-content: space-around;
+
+      width: 100%;
+      gap: 32px;
+      margin-top: 32px;
+      button {
+        margin: 0px;
       }
     }
   }
@@ -75,6 +86,11 @@ export const CryptoCardStyles = styled.div`
     span {
       width: 18px;
     }
+    .bottomContainer {
+      .buttonContainer {
+        gap: 16px;
+      }
+    }
   }
   @media only screen and (max-width: 420px) {
     .topContainer {
@@ -85,7 +101,8 @@ export const CryptoCardStyles = styled.div`
       }
       :last-child {
         margin-left: 0px;
-        margin-bottom: 32px;
+        margin-bottom: 0px;
+        margin-top: 0px;
       }
     }
   }

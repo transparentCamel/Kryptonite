@@ -13,7 +13,7 @@ export function useCryptoData() {
 
         const markets = await exchange.fetchMarkets();
 
-        const symbols = markets.slice(0, 10).map((market) => market.symbol);
+        const symbols = markets.slice(0, 7).map((market) => market.symbol);
         const tickers = await exchange.fetchTickers(symbols);
 
         const data = symbols.map((symbol) => {
