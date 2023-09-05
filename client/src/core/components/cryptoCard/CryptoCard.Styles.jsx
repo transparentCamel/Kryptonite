@@ -63,4 +63,30 @@ export const CryptoCardStyles = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    .topContainer {
+      img {
+        width: 32px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+    span {
+      width: 18px;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .topContainer {
+      flex-direction: column;
+      justify-content: center;
+      img {
+        margin-right: 0px;
+      }
+      :last-child {
+        margin-left: 0px;
+        margin-bottom: 32px;
+      }
+    }
+  }
 `;
