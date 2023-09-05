@@ -4,13 +4,23 @@ import { useCryptoData } from '../../customHooks/useCryptoData';
 import { CryptoContainerStyles } from './CryptoContainer.Styles';
 import loadingSvg from '../../../assets/svg/loading.svg';
 import Select from 'react-select';
+import axios from 'axios';
 
 const CryptoContainer = () => {
   const { cryptoData, loading, error } = useCryptoData();
   const [selectedCrypto, setSelectedCrypto] = useState(null);
 
-  const handleCryptoSelect = (selectedOption) => {
+  const handleCryptoSelect = async (selectedOption) => {
     setSelectedCrypto(selectedOption);
+
+    try {
+      await axios.post('http://localhost:3001/', {
+        actionType: 'Searched Currency',
+        currency: selectedOption.value,
+      });
+    } catch (error) {
+      console.error('Error logging to MongoDB:', error);
+    }
   };
 
   const options = [

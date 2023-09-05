@@ -24,4 +24,9 @@ export const CryptoContainerStyles = styled.section`
     justify-content: center;
     width: 32px;
   }
+  @media only screen and (max-width: 1366px) {
+    padding: 0px 8%;
+  }
+  @media only screen and (max-width: 600px) {
+  }
 `;
